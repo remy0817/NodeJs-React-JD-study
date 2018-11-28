@@ -1,0 +1,1 @@
+这是一个用NodeJs编写后端+ReactJs编写App，以京东App作为参考模板的自学研究项目。
