@@ -7,7 +7,7 @@
  */
 
 import React, { Component } from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, AsyncStorage } from 'react-native';
 
 import { commonStyle } from '../../styles';
 
@@ -35,7 +35,23 @@ export default class Home extends Component {
 
   state = {};
 
-  componentDidMount(){}
+  getUserInfo(){
+    fetch('http://10.10.254.26:3000/user/92617f90-f6ca-11e8-aa53-89997c73e8b5', {
+      headers: {
+        'Authorization': 'Bearer ' + AsyncStorage.token
+      }
+    })
+    .then(res => res.json())
+    .then(res => {
+      alert('success');
+    }).catch(err => alert(err));
+  }
+
+  componentWillMount(){
+  }
+
+  componentDidMount(){
+  }
 
   render(){
     return (

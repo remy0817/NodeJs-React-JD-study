@@ -1,0 +1,30 @@
+{
+  "name": "server",
+  "version": "0.0.1",
+  "description": "This is a NodeJs server for JD",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "start:debug": "node --inspect index.js",
+    "start:debug:brk": "node --inspect-brk index.js"
+  },
+  "dependencies": {
+    "jsonwebtoken": "^8.4.0",
+    "koa": "^2.6.2",
+    "koa-bodyparser": "^4.2.1",
+    "koa-cors": "0.0.16",
+    "koa-jwt": "^3.5.1",
+    "koa-router": "^7.4.0",
+    "mime": "^2.4.0",
+    "mysql2": "^1.6.4",
+    "mz": "^2.7.0",
+    "node-uuid": "^1.4.8",
+    "nunjucks": "^3.1.4",
+    "sequelize": "^4.41.2"
+  },
+  "keywords": [
+    "NodeJs",
+    "MySql"
+  ],
+  "author": "remy"
+}

@@ -7,7 +7,7 @@
  */
 
 import React, { Component } from 'react';
-import { View, Text, Image, TouchableWithoutFeedback } from 'react-native';
+import { View, Text, Image } from 'react-native';
 
 import { commonStyle, home_F_2_2_4_4Style } from '../../styles';
 
@@ -24,6 +24,18 @@ export default class F_2_2_4_4 extends Component {
   render(){
     return (
       <View style={styles.container}>
+        <View style={[commonStyle.flexCenter, styles.title]}>
+          <Image style={styles.titleImg} source={{uri: this.props.titleImg}} />
+        </View>
+        <View style={[commonStyle.rowAlign, commonStyle.flexWrap]}>
+          {
+            this.props.dataList.map(item => {
+              return item.type === 'one'
+                ? (<OneItem key={item.id} title={item.title} descriptionStyle={styles.one_description} description={item.description} imgUrl={item.imgUrl}></OneItem>)
+                : (<TwoItem key={item.id} title={item.title} descriptionStyle={styles.two_description} description={item.description} imgUrls={item.imgUrls}></TwoItem>)
+            })
+          }
+        </View>
       </View>
     );
   }

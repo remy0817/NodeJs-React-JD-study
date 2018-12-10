@@ -7,7 +7,7 @@
  */
 
 import React, { Component } from 'react';
-import { View, Text, TextInput, Button, KeyboardAvoidingView } from 'react-native';
+import { View, Text, TextInput, Button, KeyboardAvoidingView, AsyncStorage } from 'react-native';
 
 // 避免 React Native 应用中的键盘遮挡问题最简单、最容易安装使用的方法是 KeyboardAvoidingView。
 // 这是一个核心组件，同时也非常简单。
@@ -17,22 +17,34 @@ import { View, Text, TextInput, Button, KeyboardAvoidingView } from 'react-nativ
 // 我发现 padding 的表现是最在我意料之内的，所以我将使用它。
 
 import Btn from '../../components/button/Btn';
+import * as api from '../../api/auth';
 import { commonStyle, loginStyle } from '../../styles';
 
 let styles = loginStyle;
 
 export default class Login extends Component {
 
-  state = {};
+  state = {
+    username: 'remy',
+    password: '123456'
+  };
 
   componentWillMount(){
-    this.props.navigation.navigate('Category');
+    this.props.navigation.navigate('Home');
   }
 
   componentDidMount(){}
-
   _login = () => {
-    // this.props.navigation.navigate('Home');
+    api.login({
+      username: this.state.username,
+      password: this.state.password
+    })
+    .then(res => {
+      AsyncStorage.token = res.data.token;
+      AsyncStorage.userId = res.data.id;
+      this.props.navigation.navigate('ShoppingCart');
+    })
+    .catch(err => alert(err.message));
   }
 
   render(){
@@ -41,9 +53,9 @@ export default class Login extends Component {
         <Text>登录</Text>
         <TextInput placeholder='Email' style={styles.input}
         />
-        <TextInput placeholder='Username' style={styles.input}
+        <TextInput placeholder='Username' style={styles.input} value={this.state.username}
         />
-        <TextInput placeholder='Password' style={styles.input}
+        <TextInput placeholder='Password' style={styles.input} password={true} value={this.state.password}
         />
         <TextInput placeholder='Confirm Password' style={styles.input}
         />

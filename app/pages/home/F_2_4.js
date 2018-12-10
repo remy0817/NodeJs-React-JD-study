@@ -7,7 +7,7 @@
  */
 
 import React, { Component } from 'react';
-import { View, Text, Image, TouchableWithoutFeedback } from 'react-native';
+import { View, Text, Image } from 'react-native';
 
 import { commonStyle, home_F_2_4Style } from '../../styles';
 
@@ -31,9 +31,9 @@ export default class F_2_4 extends Component {
           {
             this.props.dataList.map(item => {
               if(item.type === 'two'){
-                return (<TwoItem key={item.id} title={item.title} description={item.description} imgUrls={item.imgUrls}></TwoItem>);
+                return (<TwoItem key={item.id} titleStyle={styles.two_title} title={item.title} descriptionStyle={styles.two_description} description={item.description} imgUrls={item.imgUrls}></TwoItem>);
               }else{
-                return (<OneItem key={item.id} title={item.title} description={item.description} imgUrl={item.imgUrl}></OneItem>);
+                return (<OneItem key={item.id} title={item.title} descriptionStyle={styles.one_description} description={item.description} imgUrl={item.imgUrl}></OneItem>);
               }
             })
           }

@@ -131,7 +131,7 @@ export default class Category extends Component {
     });
   };
 
-  componentDidMount(){
+  componentWillMount(){
     this.setState({
       menuData: [
         {id: 1, text: '热门推荐', defaultActived: true},
@@ -175,6 +175,8 @@ export default class Category extends Component {
       contentData: this._categoryData[0].data
     });
   }
+
+  componentDidMount(){}
 
   render(){
     return (

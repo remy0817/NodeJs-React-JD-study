@@ -33,7 +33,7 @@ export function setSpText(size: Number) {
 }
 
 /**
- * 屏幕适配，缩放size
+ * 屏幕适配，缩放size，获的当前设备真实的size
  * @param size
  * @return { Number }
  */

@@ -33,6 +33,15 @@ export const commonStyle = StyleSheet.create({
   tabBar: {
     width: scaleSize(130),
     height: scaleSize(100)
+  },
+  hide: {
+    display: 'none'
+  },
+  baseline: {
+    alignItems: 'baseline'
+  },
+  spaceBetween: {
+    justifyContent: 'space-between'
   }
 });
 
@@ -315,7 +324,10 @@ export const home_oneItemStyle = StyleSheet.create({
     borderRightWidth: 1,
     borderBottomWidth: 1,
     borderColor: '#f5f5f5',
-    backgroundColor: '#fff'
+    backgroundColor: '#fff',
+    paddingTop: scaleSize(12),
+    paddingBottom: scaleSize(12),
+    paddingLeft: scaleSize(20)
   },
   box: {
     marginTop: scaleSize(13),
@@ -325,7 +337,7 @@ export const home_oneItemStyle = StyleSheet.create({
   title: {
     color: '#000',
     fontSize: scaleSize(32),
-    fontWeight: '700',
+    fontWeight: '400',
     lineHeight: scaleSize(45)
   },
   description: {
@@ -347,7 +359,9 @@ export const home_twoItemStyle = StyleSheet.create({
     borderRightWidth: 1,
     borderBottomWidth: 1,
     borderColor: '#f5f5f5',
-    backgroundColor: '#fff'
+    backgroundColor: '#fff',
+    paddingTop: scaleSize(12),
+    paddingBottom: scaleSize(12)
   },
   box: {
     marginTop: scaleSize(13),
@@ -356,7 +370,7 @@ export const home_twoItemStyle = StyleSheet.create({
   title: {
     color: '#000',
     fontSize: scaleSize(32),
-    fontWeight: '700',
+    fontWeight: '400',
     lineHeight: scaleSize(45),
     marginLeft: scaleSize(18)
   },
@@ -372,6 +386,17 @@ export const home_twoItemStyle = StyleSheet.create({
     marginTop: scaleSize(11),
     marginLeft: scaleSize(14),
     marginRight: scaleSize(14)
+  },
+  leftBox: {
+    width: '50%'
+  },
+  rightBox: {
+    width: '50%',
+    paddingTop: scaleSize(20)
+  },
+  oneImg: {
+    width: scaleSize(160),
+    height: scaleSize(160)
   }
 });
 
@@ -380,22 +405,201 @@ export const home_F_2_4Style = StyleSheet.create({
     //
   },
   title: {
+    width: '100%',
     height: scaleSize(70),
     backgroundColor: '#f6f6f6'
   },
   titleImg: {
     width: scaleSize(384),
     height: scaleSize(70)
+  },
+  one_title: {},
+  one_description: {
+    color: '#648EFF'
+  },
+  two_title: {
+    textAlign: 'center'
+  },
+  two_description: {
+    color: '#648EFF',
+    textAlign: 'center'
   }
 });
 
-export const home_F_4_4Style = StyleSheet.create({});
+export const home_F_4NStyle = StyleSheet.create({
+  container: {},
+  title: {
+    width: '100%',
+    height: scaleSize(70),
+    backgroundColor: '#f6f6f6'
+  },
+  titleImg: {
+    width: scaleSize(384),
+    height: scaleSize(70)
+  },
+  one_title: {
+  }
+});
 
-export const home_F_2_2_4Style = StyleSheet.create({});
+export const home_F_2_2_4Style = StyleSheet.create({
+  container: {},
+  title: {
+    width: '100%',
+    height: scaleSize(70),
+    backgroundColor: '#f6f6f6'
+  },
+  titleImg: {
+    width: scaleSize(384),
+    height: scaleSize(70)
+  },
+  one_description: {
+    color: '#FF5959'
+  },
+  two_description: {
+    color: '#FF5959'
+  }
+});
 
-export const home_F_2_2_4_4Style = StyleSheet.create({});
+export const home_F_2_2_4_4Style = StyleSheet.create({
+  container: {},
+  title: {
+    width: '100%',
+    height: scaleSize(70),
+    backgroundColor: '#f6f6f6'
+  },
+  titleImg: {
+    width: scaleSize(384),
+    height: scaleSize(70)
+  },
+  one_description: {
+    color: '#D663E1'
+  },
+  two_description: {
+    color: '#D663E1'
+  }
+});
 
 export const home_F_2_4_4Style = StyleSheet.create({});
+
+const home_recommend_goodsWidth = deviceWidth / 2 - 2;
+export const home_recommendStyle = StyleSheet.create({
+  container: {
+    backgroundColor: '#F0F2F5'
+  },
+  title: {
+    width: '100%',
+    height: scaleSize(42),
+    marginTop: scaleSize(28),
+    marginBottom: scaleSize(28),
+    paddingLeft: scaleSize(10),
+    paddingRight: scaleSize(10)
+  },
+  titleCon: {
+    zIndex: 2,
+    padding: scaleSize(20),
+    backgroundColor: '#F0F2F5'
+  },
+  titleSplit: {
+    position: 'absolute',
+    top: scaleSize(20),
+    left: scaleSize(10),
+    zIndex: 1,
+    width: '100%',
+    height: scaleSize(2),
+    backgroundColor: '#dbdbdb'
+  },
+  titleImg: {
+    width: scaleSize(26),
+    height: scaleSize(26),
+    marginRight: scaleSize(20)
+  },
+  titleText: {
+    fontSize: scaleSize(28),
+    color: '#848689'
+  },
+  itemBox: {
+    width: '50%',
+    paddingBottom: scaleSize(8)
+  },
+  leftItem: {
+    paddingRight: scaleSize(4)
+  },
+  rightItem: {
+    paddingLeft: scaleSize(4)
+  },
+  itemCon: {
+    height: scaleSize(580),
+    backgroundColor: '#fff'
+  },
+  goodsImg: {
+    width: home_recommend_goodsWidth,
+    height: home_recommend_goodsWidth
+  },
+  activityIcon: {
+    position: 'absolute',
+    right: 0,
+    bottom: 0,
+    width: scaleSize(60),
+    height: scaleSize(60)
+  },
+  summary: {
+    padding: scaleSize(6)
+  },
+  textImg: {
+    width: scaleSize(94),
+    height: scaleSize(26),
+    marginRight: scaleSize(8),
+    position: 'absolute',
+    left: scaleSize(6),
+    top: scaleSize(12)
+  },
+  description: {
+    color: '#232326'
+  },
+  moneyIcon: {
+    color: '#f23030',
+    marginLeft: scaleSize(6)
+  },
+  price1: {
+    fontSize: scaleSize(32),
+    color: '#f23030'
+  },
+  price2: {
+    color: '#f23030'
+  },
+  activityText: {
+    fontSize: scaleSize(20),
+    color: '#f23030',
+    borderWidth: scaleSize(2),
+    borderColor: '#f23030',
+    marginLeft: scaleSize(20),
+    paddingTop: scaleSize(4),
+    paddingLeft: scaleSize(4)
+  },
+  lookAlike: {
+    position: 'absolute',
+    right: scaleSize(6),
+    top: 0,
+    borderWidth: scaleSize(2),
+    borderColor: '#efefef',
+    paddingTop: scaleSize(6),
+    paddingLeft: scaleSize(12),
+    paddingRight: scaleSize(8)
+  },
+  plusPrice: {
+    marginTop: scaleSize(10),
+    fontSize: scaleSize(26),
+    color: '#232326',
+    marginLeft: scaleSize(6)
+  },
+  plusImg: {
+    position: 'absolute',
+    right: -scaleSize(60),
+    top: scaleSize(12),
+    width: scaleSize(56),
+    height: scaleSize(18)
+  }
+});
 
 // 分类
 export const category_headerStyle = StyleSheet.create({
@@ -448,7 +652,7 @@ export const category_menuStyle = StyleSheet.create({
 });
 
 // 这里不能直接计算出item的width，计算并设置item的width会造成container的宽度莫名的变成deviceWidth
-const category_itemBoxWidth = deviceWidth - scaleSize(172) - scaleSize(28) + scaleSize(40);
+const category_itemBoxWidth = deviceWidth - scaleSize(172) - scaleSize(34) * 2;
 
 export const category_contentStyle = StyleSheet.create({
   container: {
@@ -466,7 +670,7 @@ export const category_contentStyle = StyleSheet.create({
     fontWeight: '700'
   },
   itemBox: {
-    width: scaleSize(category_itemBoxWidth * 2),
+    width: category_itemBoxWidth,
     marginTop: scaleSize(32),
     flexDirection: 'row',
     flexWrap: 'wrap'
