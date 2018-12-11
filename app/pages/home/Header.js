@@ -9,7 +9,8 @@
 import React, { Component } from 'react';
 import { View, Image, TouchableOpacity, Text } from 'react-native';
 
-import { commonStyle, home_headerStyle } from '../../styles';
+import { commonStyle } from '../../styles';
+import { home_headerStyle } from '../../styles/home';
 
 let styles = home_headerStyle;
 

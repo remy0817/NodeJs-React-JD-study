@@ -9,7 +9,8 @@
 import React, { Component } from 'react';
 import { View, Image, Text } from 'react-native';
 
-import { commonStyle, home_quickNavStyle } from '../../styles';
+import { commonStyle } from '../../styles';
+import { home_quickNavStyle } from '../../styles/home';
 
 let styles = home_quickNavStyle;
 

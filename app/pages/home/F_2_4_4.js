@@ -9,7 +9,8 @@
 import React, { Component } from 'react';
 import { View, Text, Image, TouchableWithoutFeedback } from 'react-native';
 
-import { commonStyle, home_F_2_4_4Style } from '../../styles';
+import { commonStyle } from '../../styles';
+import { home_F_2_4_4Style } from '../../styles/home';
 
 import OneItem from './OneItem';
 import TwoItem from './TwoItem';

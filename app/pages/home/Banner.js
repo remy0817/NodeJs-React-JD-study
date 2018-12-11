@@ -10,7 +10,8 @@ import React, { Component } from 'react';
 import { View, Image } from 'react-native';
 import Swiper from 'react-native-swiper';
 
-import { commonStyle, home_bannerStyle } from '../../styles';
+import { commonStyle } from '../../styles';
+import { home_bannerStyle } from '../../styles/home';
 
 let styles = home_bannerStyle;
 

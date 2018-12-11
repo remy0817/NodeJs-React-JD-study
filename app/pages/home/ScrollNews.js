@@ -9,7 +9,8 @@
 import React, { Component } from 'react';
 import { View, Text, Image } from 'react-native';
 
-import { commonStyle, home_scrollNewsStyle } from '../../styles';
+import { commonStyle } from '../../styles';
+import { home_scrollNewsStyle } from '../../styles/home';
 
 let styles = home_scrollNewsStyle;
 

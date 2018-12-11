@@ -9,7 +9,8 @@
 import React, { Component } from 'react';
 import { View, Image, TouchableWithoutFeedback, Text } from 'react-native';
 
-import { commonStyle, category_headerStyle } from '../../styles';
+import { commonStyle } from '../../styles';
+import { category_headerStyle } from '../../styles/category';
 
 let styles = category_headerStyle;
 

@@ -1,0 +1,14 @@
+{
+  "name": "web crawler",
+  "version": "0.0.1",
+  "description": "This is a web crawler of NodeJs server",
+  "scripts": {},
+  "dependencies": {
+    "mz": "^2.7.0",
+    "request": "^2.88.0"
+  },
+  "keywords": [
+    "NodeJs"
+  ],
+  "author": "remy"
+}

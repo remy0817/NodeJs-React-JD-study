@@ -9,7 +9,8 @@
 import React, { Component } from 'react';
 import { ScrollView, View, Text, TouchableWithoutFeedback } from 'react-native';
 
-import { commonStyle, category_menuStyle } from '../../styles';
+import { commonStyle } from '../../styles';
+import { category_menuStyle } from '../../styles/category';
 
 let styles = category_menuStyle;
 
@@ -19,17 +20,17 @@ export default class CMenu extends Component {
     activedId: ''
   };
 
-  _select = id => {
+  _select = areaId => {
     return () => {
       this.setState({
-        activedId: id
+        activedId: areaId
       });
-      this.props.toggleMenu(id);
+      this.props.toggleMenu(areaId);
     }
   };
 
   _getItemStyle = itemData => {
-    if(this.state.activedId === itemData.id || (this.state.activedId === '' && itemData.defaultActived)) {
+    if(this.state.activedId === itemData.areaId || (this.state.activedId === '' && itemData.defaultActived)) {
       return {color: '#e93b3d', bgColor: '#fff'};
     }else{
       return {color: '#333', bgColor: '#f8f8f8'};
@@ -38,9 +39,9 @@ export default class CMenu extends Component {
 
   _getItemView = itemData => {
     return (
-      <TouchableWithoutFeedback key={itemData.id} onPress={this._select(itemData.id)}>
-        <View style={[styles.item,{backgroundColor: this._getItemStyle(itemData).bgColor}]}>
-          <Text style={{color: this._getItemStyle(itemData).color}}>{itemData.text}</Text>
+      <TouchableWithoutFeedback key={itemData.areaId} onPress={this._select(itemData.areaId)}>
+        <View style={[styles.item, {backgroundColor: this._getItemStyle(itemData).bgColor}]}>
+          <Text style={{color: this._getItemStyle(itemData).color}}>{itemData.areaName}</Text>
         </View>
       </TouchableWithoutFeedback>
     );

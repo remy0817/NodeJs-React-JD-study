@@ -9,6 +9,8 @@
 import React, { Component } from 'react';
 import { View, Text, Image, AsyncStorage } from 'react-native';
 
+import navData from '../../config/nav';
+
 import { commonStyle } from '../../styles';
 
 export default class Home extends Component {
@@ -21,14 +23,14 @@ export default class Home extends Component {
           // <Image source={require('../../assets/nav_icon_home_active.png')} />
           // <Image source={{uri: baseIcon_actived}} />
           <Image style={commonStyle.tabBar}
-            source={{uri: 'https://m.360buyimg.com/mobilecms/jfs/t18583/69/717127328/4407/5e47882b/5aa10ceaN649eec12.png'}} />
+            source={{uri: navData.shoppingCart.focusedUrl}} />
         );
       }
       return (
         // <Image source={require('../../assets/nav_icon_home.png')} />
         // <Image source={{uri: baseIcon}} />
         <Image style={commonStyle.tabBar}
-          source={{uri: 'https://m.360buyimg.com/mobilecms/jfs/t18583/69/717127328/4407/5e47882b/5aa10ceaN649eec12.png'}} />
+          source={{uri: navData.shoppingCart.iconUrl}} />
       );
     }
   };

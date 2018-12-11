@@ -14,7 +14,7 @@ const _headers = {
   'Content-Type': 'application/json'
 };
 
-function handleErr(res){
+export function handleErr(res){
   alert(res.message);
 }
 

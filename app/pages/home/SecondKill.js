@@ -9,10 +9,11 @@
 import React, { Component } from 'react';
 import { View, Text, Image, ScrollView } from 'react-native';
 
-import { getDateItemValue, dateFormat, MobileDate } from '../../utils/timeUtil';
+import { getDateItemValue, dateFormat, MobileDate } from '../../utils/time';
 
 import { deviceWidth, scaleSize } from '../../styles/screenUtil';
-import { commonStyle, home_floorStyle, home_secondKill_item_width } from '../../styles';
+import { commonStyle } from '../../styles';
+import { home_floorStyle, home_secondKill_item_width } from '../../styles/home';
 
 let styles = home_floorStyle;
 let itemWidth = home_secondKill_item_width;

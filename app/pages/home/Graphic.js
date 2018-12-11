@@ -9,7 +9,8 @@
 import React, { Component } from 'react';
 import { View, Image } from 'react-native';
 
-import { commonStyle, home_floorStyle } from '../../styles';
+import { commonStyle, } from '../../styles';
+import { home_floorStyle } from '../../styles/home';
 
 let styles = home_floorStyle;
 

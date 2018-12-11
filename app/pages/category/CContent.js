@@ -9,7 +9,8 @@
 import React, { Component } from 'react';
 import { ScrollView, View, Text, Image } from 'react-native';
 
-import { commonStyle, category_contentStyle } from '../../styles';
+import { commonStyle } from '../../styles';
+import { category_contentStyle } from '../../styles/category';
 
 let styles = category_contentStyle;
 
@@ -18,9 +19,9 @@ export default class CContent extends Component {
   // 二级分类
   _getItemView_2 = childData => {
     return (
-      <View key={childData.id} style={styles.item}>
-        <Image style={styles.itemImg} source={{uri: childData.url}} />
-        <Text style={styles.itemText}>{childData.text}</Text>
+      <View key={childData.keywordId} style={styles.item}>
+        <Image style={styles.itemImg} source={{uri: `https:${childData.imageUrl}`}} />
+        <Text style={styles.itemText}>{childData.keyword}</Text>
       </View>
     );
   }
@@ -28,13 +29,13 @@ export default class CContent extends Component {
   // 一级分类
   _getItemView_1 = itemData => {
     return (
-      <View key={itemData.id} style={styles.categoryBox}>
+      <View key={itemData.keywordId} style={styles.categoryBox}>
         <View>
-          <Text style={styles.title}>{itemData.title}</Text>
+          <Text style={styles.title}>{itemData.keyword}</Text>
         </View>
         <View style={styles.itemBox}>
           {
-            itemData.list.map(child => {
+            itemData.level2words.map(child => {
               return this._getItemView_2(child);
             })
           }
@@ -46,7 +47,13 @@ export default class CContent extends Component {
   render(){
     return (
       <View style={styles.container}>
-        <ScrollView showsVerticalScrollIndicator={false}>
+        <ScrollView
+         ref={scroll => {
+          if(scroll && this.props.goTop){
+            scroll.scrollTo({y: 0});
+          }
+         }}
+         showsVerticalScrollIndicator={false}>
           {
             this.props.dataList.map(item => {
               return this._getItemView_1(item);

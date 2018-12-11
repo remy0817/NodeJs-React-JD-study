@@ -8,7 +8,8 @@
 import React, { Component } from 'react';
 import { View, Text, Image } from 'react-native';
 
-import { commonStyle, home_F_4NStyle } from '../../styles';
+import { commonStyle } from '../../styles';
+import { home_F_4NStyle } from '../../styles/home';
 
 import OneItem from './OneItem';
 
