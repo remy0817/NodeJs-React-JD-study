@@ -8,9 +8,9 @@
 
 const config = {
     database: 'nodejstest',
-    username: 'root',
-    password: 'ori18502800930',
-    host: '10.30.0.11',
+    username: '',
+    password: '',
+    host: '',
     port: 3306
 };
 
